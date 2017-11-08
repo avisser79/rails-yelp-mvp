@@ -1,0 +1,15 @@
+<ul>
+  <% @restaurants.each do |restaurant| %><!-- no puts -->
+    <li>
+      <strong>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      </strong>
+      <%= restaurant.address %>
+
+
+      <%= link_to 'edit', edit_restaurant_path(restaurant) %>
+      -
+      <%= link_to 'delete', restaurant_path(restaurant), method: 'delete', data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %><!-- no puts -->
+</ul>
